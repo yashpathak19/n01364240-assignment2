@@ -20,6 +20,7 @@ namespace n01364240_Assignment2_q1
                     int Customer_Tickets = Convert.ToInt32(customer_tickets.Text);
                     ticket_summary.InnerHtml = "";
                     int Modulus = 1;
+                    // checking if the tickets lies in bundle 1
                     if (Customer_Tickets <= 50)
                     {
                         for (int i = 1; i <= Customer_Tickets; i++)
@@ -27,6 +28,7 @@ namespace n01364240_Assignment2_q1
                             ticket_summary.InnerHtml += "You received a bundle of 1! That’s " + i.ToString() + " ticket(s)!<br>";
                         }
                     }
+                    // checking if the tickets lies in bundle 2
                     else if (Customer_Tickets >=51 && Customer_Tickets <= 150)
                     {
                         for (int i = 2; i <= Customer_Tickets; i += 2)
@@ -35,6 +37,7 @@ namespace n01364240_Assignment2_q1
                         }
                         Modulus = 2;
                     }
+                    // checking if the tickets lies in bundle 3
                     else if (Customer_Tickets >= 151 && Customer_Tickets <= 300)
                     {
                         for (int i = 3; i <= Customer_Tickets; i += 3)
@@ -43,6 +46,7 @@ namespace n01364240_Assignment2_q1
                         }
                         Modulus = 3;
                     }
+                    // the tickets lies in bundle 5
                     else
                     {
                         for (int i = 5; i <= Customer_Tickets; i += 5)
@@ -51,7 +55,9 @@ namespace n01364240_Assignment2_q1
                         }
                         Modulus = 5;
                     }
+                    // getting the remainder for leftover
                     int Remainder = Customer_Tickets % Modulus;
+                    // if leftover print the leftover summary
                     if (Remainder != 0)
                     {
                         ticket_summary.InnerHtml += "Your leftover is " + Remainder.ToString() + " ticket(s). That’s " + Customer_Tickets.ToString() + " ticket(s)!<br>";

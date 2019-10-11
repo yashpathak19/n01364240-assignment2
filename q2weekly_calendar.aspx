@@ -9,7 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <p>Please select your study/work days</p>
+            <h1>Weekly Calendar</h1>
+            <h2>Please select your study/work days</h2>
             <asp:CheckBoxList runat="server" ID="work_days">
                 <asp:ListItem Value="mon">Monday</asp:ListItem>
                 <asp:ListItem Value="tues">Tuesday</asp:ListItem>

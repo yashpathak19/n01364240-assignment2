@@ -23,38 +23,35 @@ namespace n01364240_Assignment2_q1
                     int Y_Axis = Convert.ToInt32(y_axis.Text);
 
                     //if the x and y value is positive the quadrant will fall in 1st
-                    if (X_Axis >= 0 && Y_Axis >= 0)
+                    if (X_Axis > 0 && Y_Axis > 0)
                     {
                         Quadrant_No = "I";
                     }
                     //if the x value is negative and y value is psoitive then the quadrant will fall in Second 
-                    else if (X_Axis <= 0 && Y_Axis >= 0)
+                    else if (X_Axis < 0 && Y_Axis > 0)
                     {
                         Quadrant_No = "II";
                     }
                     //if the x and y value is negative then the coordinates will fall in third
-                    else if (X_Axis <= 0 && Y_Axis <= 0)
+                    else if (X_Axis < 0 && Y_Axis < 0)
                     {
                         Quadrant_No = "III";
                     }
-                    else
+                    //if the x value is positive and y axis is negative than the coordinates will fall in fourth
+                    else if (X_Axis > 0 && Y_Axis < 0)
                     {
                         Quadrant_No = "IV";
                     }
+                    else if (X_Axis == 0 && Y_Axis == 0)
+                    {
+                        Quadrant_No = "Origin";
+                    }
+                    else
+                    {
+                        Quadrant_No = "None! As the X Axis and Y Axis value should be non zero";
+                    }
                     quadrant.InnerHtml = "(" + X_Axis.ToString() + "," + Y_Axis.ToString() + ") falls in Quadrant " + Quadrant_No;
                 }
-            }
-        }
-
-        protected void Axis_Validate(object sender, ServerValidateEventArgs e)
-        {
-            if (int.TryParse(e.Value, out int axis) && axis != 0)
-            {
-                e.IsValid = true;
-            }
-            else
-            {
-                e.IsValid = false;
             }
         }
     }

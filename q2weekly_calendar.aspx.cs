@@ -40,8 +40,9 @@ namespace n01364240_Assignment2_q1
                                     custom_message = "have fun!";
                                 }
                                 // adding the line to the monthly summary
-                                monthly_summary.InnerHtml += "Oct " + count + " is a " + work_day.Text + "! Time to " + custom_message + "<br>";
+                                monthly_summary.InnerHtml += "Oct " + count.ToString() + " is a " + work_day.Text + "! Time to " + custom_message + "<br>";
                             }
+                            // incrementing the count
                             count += 1;
                         }
                     }

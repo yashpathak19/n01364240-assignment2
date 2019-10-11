@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h1>Raffle Bundle</h1>
             <h2>Please enter the number of tickets that you want to buy</h2>
             <asp:TextBox runat="server" ID="customer_tickets"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ErrorMessage="Please enter the number of tickets that you want to purchase" ControlToValidate="customer_tickets"></asp:RequiredFieldValidator>
